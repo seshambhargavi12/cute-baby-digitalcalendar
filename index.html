@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar Project</title>
+    <style>
+        body{
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    font-family: cursive;
+    background-image: url(seaview.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.outline{
+    background-color: white;
+    width: 30vmax;
+    height: 20vmax;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.3);
+    overflow: hidden;
+}
+.whole :hover{
+    background-image: url('cutebaby.jpg');
+    color: yellow;
+    -webkit-text-stroke: 1px black;
+} 
+.heading{
+    background-color: red;
+    color: white;
+    padding: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+.day{
+    background-color: blue;
+    color: white;
+    padding: 3px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+.day-number{
+    background-color: greenyellow;
+    color: white;
+     padding: 3px;
+    font-size: 30px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+.month{
+    background-color:rgb(240, 3, 192);
+    color: white;
+     padding: 3px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="whole">
+        <table class="outline">
+        <tr>
+         <td colspan="2" class="heading">
+            <h3 class="year" id="year">
+                 2026
+            </h3>
+        </td>
+        </tr>
+       <tbody>
+        <tr>
+            <td class="day" id="day">Tuesday</td>
+            <td rowspan="2" class="day-number"><h1 id="day-number">05</h1></td>
+        </tr>
+        <tr>
+            <td class="month" id="month">April</td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<script>
+const monthNameE1=document.getElementById("month");
+const dayNameE1=document.getElementById("day");
+const dayNumE1=document.getElementById("day-number");
+const yearE1=document.getElementById("year")
+
+const date= new Date();
+const month=date.getMonth();
+monthNameE1.innerText=date.toLocaleString("en", {
+    month:"long"
+});
+
+dayNameE1.innerText=date.toLocaleString("en",{
+    weekday:"long"
+});
+
+dayNumE1.innerText=date.getDate();
+
+yearE1.innerText=date.getFullYear();
+
+</script>
+</body>
+</html>
